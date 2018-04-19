@@ -4,10 +4,10 @@ import sqlite3, datetime, os, random
 
 #DATABASE = 'chan.db'
 #UPLOAD_FOLDER = 'static/uploads'
-DATABASE = '/home/Rukkaitto/4chan/chan.db'
-UPLOAD_FOLDER = '/home/Rukkaitto/4chan/static/uploads'
+DATABASE = '/home/Rukkaitto/frchan/chan.db'
+UPLOAD_FOLDER = '/home/Rukkaitto/frchan/static/uploads'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'webm'])
-SITE_NAME = 'francechan'
+SITE_NAME = 'frchan'
 
 app = Flask(__name__, static_url_path='/static')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
