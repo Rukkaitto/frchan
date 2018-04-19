@@ -1,0 +1,64 @@
+<!doctype html>
+
+<head>
+    <link rel="icon" href="data:;base64,=">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <title>/{{board}}/ - {{board_name}} - {{site_name}}</title>
+</head>
+
+<body>
+
+<div class="board-list">
+    <a href="/">boards</a>
+    {% for board in boards %}
+    / <a href="/{{board[1]}}">{{board[1]}}</a>
+    {% endfor %}
+</div>
+<hr style="width: 90%;">
+<h1>/{{board}}/ - {{board_name}}</h1>
+
+
+
+{% for post in posts %}
+<div class="thread">
+    <br>
+    <div class="file-info">
+        File: <a href="static/uploads/{{post[1]}}" target="_blank">{{post[1]}}</a>
+    </div>
+
+    <div class="media">
+        {% if post[1] %}
+            {% if post[1][-5:]==".webm" %}
+                <video src="{{url_for('static', filename='uploads/'+post[1])}}" controls></video>
+            {% else %}
+                <img src="{{url_for('static', filename='uploads/'+post[1])}}"/>
+            {% endif %}
+        {% endif %}
+    </div>
+    <div class="poster-info">
+        <span class="username">{{post[2]}} </span>
+        {{post[3]}} No.{{post[0]}} <a href="/{{board}}/replies/{{post[0]}}">Répondre</a><br/>
+    </div>
+    <br>
+    <div class="posttext">
+        {% for para in post[5].split('\n') %}
+            {{para}}<br>
+        {% endfor %}
+    </div>
+
+</div>
+{% endfor %}
+
+<div class="submit-post">
+    <br>
+    <br>
+    <form method="POST" action="/{{board}}/post" enctype="multipart/form-data">
+        name:<input type="text" name="name"><br/>
+        image:<input type="file" name="image"><br/>
+        post: <textarea type="text" name="post_text" rows="10" cols="20"></textarea><br/>
+        <input type="submit" value="Post">
+    </form>
+</div>
+
+
+</body>

@@ -1,0 +1,12 @@
+insert into boards(board_short_name,board_description) values ("b","Random");
+insert into boards(board_short_name,board_description) values ("pol","Politique");
+insert into boards(board_short_name,board_description) values ("mu","Musique");
+insert into boards(board_short_name,board_description) values ("jv","Jeux vidéos");
+insert into boards(board_short_name,board_description) values ("a","Anime & Manga");
+insert into boards(board_short_name,board_description) values ("r9k","ROBOT9001");
+insert into boards(board_short_name,board_description) values ("fit","Fitness");
+insert into boards(board_short_name,board_description) values ("tv","Télévision et Films");
+insert into boards(board_short_name,board_description) values ("yt","Youtube");
+insert into boards(board_short_name,board_description) values ("s","Streaming");
+insert into boards(board_short_name,board_description) values ("h","Hentai");
+insert into boards(board_short_name,board_description) values ("nsfw","NSFW");

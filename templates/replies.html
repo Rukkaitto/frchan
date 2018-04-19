@@ -1,0 +1,35 @@
+<!doctype html>
+<head>
+    <link rel="stylesheet" href="../../static/css/main.css">
+</head>
+
+<body>
+    {% for post in replies %}
+    <div>
+        pseudo: {{post[1]}}<br/>
+        date: {{post[2]}}<br/>
+        {% if post[0] %}
+            {% if post[0][-5:]==".webm" %}
+                <video src="{{url_for('static', filename='uploads/'+post[0])}}" controls></video>
+            {% else %}
+                <img src="{{url_for('static', filename='uploads/'+post[0])}}"/>
+            {% endif %}
+        {% endif %}
+        {% for para in post[4].split('\n') %}
+            {{para}}<br>
+        {% endfor %}
+    </div>
+    <br>
+    {% endfor %}
+
+    <div>
+            <form method="POST" action="/{{board}}/replies/{{post_id}}/post" enctype="multipart/form-data">
+                name:<input type="text" name="name"><br/>
+                image:<input type="file" name="image"><br/>
+                post: <textarea type="text" name="post_text" rows="10" cols="20"></textarea><br/>
+                <input type="submit" value="Post">
+            </form>
+    </div>
+
+</body>
+

@@ -1,0 +1,43 @@
+html {
+    min-height: 100%;
+    background: linear-gradient(#edeeff, white);
+    font-family: Arial;
+    font-size: 10pt;
+}
+
+h1 {
+    color: #af0a0f;
+    text-align: center;
+    font-weight: bold;
+}
+
+.posttext,.poster-info {
+    display: block;
+    position: relative;
+    left: 20px;
+}
+
+.media {
+    float: left;
+}
+
+.thread {
+    clear: both;
+}
+
+.submit-post {
+    clear: both;
+}
+
+img,video {
+    width: 300px;
+}
+
+.username {
+    color: #117743;
+    font-weight: bold;
+}
+
+.file-info{
+    margin-bottom: 5px;
+}

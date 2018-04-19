@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>{{ site_name }} - Accueil</title>
+    <link rel="stylesheet" href="../static/css/main.css">
+
+
+</head>
+
+<body>
+    <h2>{{ site_name }}</h2>
+
+    <ul>
+        {% for board in boards %}
+        <li>
+            <a href="/{{board[1]}}">{{board[1]}} - {{board[2]}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+</body>
+
+</html>
+
+
