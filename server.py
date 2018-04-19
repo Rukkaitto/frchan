@@ -2,10 +2,10 @@ from flask import Flask, request, render_template, g
 from werkzeug.utils import secure_filename
 import sqlite3, datetime, os, random
 
-DATABASE = '/home/Rukkaitto/4chan/chan.db'
-UPLOAD_FOLDER = '/home/Rukkaitto/4chan/static/uploads'
+DATABASE = 'chan.db'
+UPLOAD_FOLDER = 'static/uploads'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'webm'])
-SITE_NAME = 'frchan'
+SITE_NAME = 'francechan'
 
 app = Flask(__name__, static_url_path='/static')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
